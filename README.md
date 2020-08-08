@@ -1,5 +1,4 @@
-### Hi there 👋
-<br>
+### Hi there! 👋
 
 ## Connect with me:
 
@@ -27,7 +26,7 @@
 
 <br><br><br>
 
-<img align="left" alt="cod-lab's Github Stats" src="https://github-readme-stats.codestackr.vercel.app/api?username=cod-lab&show_icons=true" />
+<img align="left" alt="cod-lab's Github Stats" src="https://github-readme-stats.codestackr.vercel.app/api?username=cod-lab&show_icons=true&theme=synthwave" />
 
 
 
