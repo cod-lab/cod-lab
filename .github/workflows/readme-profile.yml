@@ -1,7 +1,7 @@
 name: Build README
 
 on:
-  schedule:                                    #  hh:mm:ss
+  schedule:                                    			 	       # hh:mm:ss
     - cron: '30 23 7,17,27 * *'         # set time is UTC which will here run at 05:00:00 on 8,18,28th of every month every year (5a.m)
 
 
