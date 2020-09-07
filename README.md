@@ -60,7 +60,7 @@
 </p>
 
 ##
-&nbsp;Want to [_know_](How_it_works.md) about my automated profile page?
+&nbsp;Want to [_know_](https://github.com/cod-lab/cod-lab/blob/master/How_it_works.md) about my automated profile page?
 
 <!-- Want to <a href="" target="_self"><em>know</em></a> about my automated profile page? -->
 
