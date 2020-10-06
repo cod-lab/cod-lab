@@ -16,23 +16,34 @@ def read_file(file,content):
 
 # Get New List
 def get_repos_list(user,file,content,logs):
-    new_content = content+[]
+    query = """query {
+    user(login: """ + user + """) {
+        repositories(isFork: false, privacy: PUBLIC, first: 5, 
+            orderBy: {field: CREATED_AT, direction: DESC}) {
+                nodes {
+                    name
+                    url
+                }
+            }
+        }
+    }"""
+    url = 'https://api.github.com/graphql'
+    token = 'Token $my_github_token'            # github token is mandatory to acces github graphQL APIs, add your token inplace of '$my_github_token'
 
-    # response = re.get('https://api.github.com/users/cod-lab/repos?sort=created, timeout=10)           # also works
-    payload = {'sort': 'created'}
-    response = r.get('https://api.github.com/users/' + user + '/repos', params=payload, timeout=20).json()        # got list of user's all public repos
+    response = r.post (
+        url,
+        headers={'Authorization': token },
+        json={'query': query},
+        timeout=20
+    ).json()['data']['user']['repositories']['nodes']
 
-    # getting filtered list (latest 5 public repos which are not forked)
-    j=1
-    for i in range(len(response)):
-        if response[i]['fork'] == False:
-            new_content[j+40] = ["* [" + response[i]['name'] + "](" + response[i]['html_url'] + ")\n"]
-            j+=1
-        if j>5: break
-
-    if j<5: 
+    if len(response)<5:
         logs_fn(logs,"Less than 5 repos in github account")
         s.exit("\nError: less than 5 repos available\n")          # terminate prgm right away after printing msg
+
+    new_content = content+[]
+    for i in range(5):
+        new_content[i+41] = ["* [" + response[i]['name'] + "](" + response[i]['url'] + ")\n"]
 
     if content != new_content:
         print('\nwrite_file block----------------------\n')
@@ -51,7 +62,7 @@ def write_file(file,content):
 # writing err logs
 def logs_fn(logs,e):
     print('\nlogs_fn block----------------------\n')
-    
+
     errs={}
     if os.path.exists(logs) and os.stat(logs).st_size != 0:
         errs = ast.literal_eval(open(logs,'r').read())          # ast => str --> dict 
@@ -65,8 +76,7 @@ def logs_fn(logs,e):
     print('\nlogs_fn block end------------------\n')
 
 
-
-user='cod-lab'
+user=""" "cod-lab" """
 file='README.md'
 content=[[]]
 logs='Logs'
