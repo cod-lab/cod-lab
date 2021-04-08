@@ -38,11 +38,11 @@
 
 <font face="consolas"><b><em>
 
+* [coding-practice](https://github.com/cod-lab/coding-practice)
 * [java-servlet](https://github.com/cod-lab/java-servlet)
 * [cod-lab](https://github.com/cod-lab/cod-lab)
 * [asp.net](https://github.com/cod-lab/asp.net)
 * [django-react-redux_projects](https://github.com/cod-lab/django-react-redux_projects)
-* [ubuntu-cmds](https://github.com/cod-lab/ubuntu-cmds)
 
 </em></b></font>
 
