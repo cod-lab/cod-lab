@@ -38,11 +38,11 @@
 
 <font face="consolas"><b><em>
 
+* [javascript](https://github.com/cod-lab/javascript)
+* [dsa-implementation](https://github.com/cod-lab/dsa-implementation)
 * [orange-ballon](https://github.com/cod-lab/orange-ballon)
 * [devTrek](https://github.com/cod-lab/devTrek)
-* [coding-practice](https://github.com/cod-lab/coding-practice)
-* [java-servlet](https://github.com/cod-lab/java-servlet)
-* [cod-lab](https://github.com/cod-lab/cod-lab)
+* [dsa-problems](https://github.com/cod-lab/dsa-problems)
 
 </em></b></font>
 
